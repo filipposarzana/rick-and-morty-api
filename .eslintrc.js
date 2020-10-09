@@ -1,0 +1,51 @@
+module.exports = {
+  extends: [
+    'airbnb/base',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'plugin:prettier/recommended',
+    'prettier/@typescript-eslint',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/prefer-interface': 'off',
+    'babel/semi': 'off',
+    curly: ['error', 'all'],
+    'global-require': 'off',
+    'import/extensions': ['error', 'ignorePackages', { ts: 'never', js: 'never' }],
+    'import/no-extraneous-dependencies': ['error', { peerDependencies: true }],
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'max-len': 'off',
+    'no-tabs': 'error',
+    'no-unexpected-multiline': 'off',
+    'no-underscore-dangle': ['error'],
+    'prettier/prettier': 'error',
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['~', './']],
+        extensions: ['.ts', '.tsx', '.json'],
+      },
+      node: {
+        extensions: ['.js', '.ts', '.tsx',],
+        moduleDirectory: ['node_modules'],
+      },
+    },
+  },
+}
