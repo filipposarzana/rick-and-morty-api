@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { getCharacters } from '~/api/characters'
 import { CharacterComponent } from '~/components/Character'
 import { Flex } from '~/components/Flex'
+import { GlobalStyle } from '~/components/GlobalStyle'
 import { Text } from '~/components/Text'
 import { PromiseReturnType } from '~/types'
 import { getPageFromCursor } from '~/utils/getPageFromCursor'
@@ -42,6 +43,8 @@ const Home = ({ characters: initialCharacters }: Props) => {
         <title key="title">Rick and Morty API</title>
         <link key="favicon" rel="icon" href="/favicon.ico" />
       </Head>
+
+      <GlobalStyle />
 
       <Flex direction="column" grow={1}>
         <Flex background="gray900" p={16}>
