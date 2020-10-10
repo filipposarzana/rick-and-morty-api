@@ -1,4 +1,4 @@
-import { fetch } from '~/utils/fetch'
+import { call } from '~/utils/fetch'
 
 export type Location = {
   created: string
@@ -10,7 +10,8 @@ export type Location = {
   url: string
 }
 
-export const getLocation = (location: number) => {
-  console.log(location, `location/${location}`)
-  return fetch<Location>(`location/${location}`)
+export const getLocations = async (locations: number[]) => {
+  const response = await call<Location | Location[]>(`location/${locations.join(',')}`)
+
+  return 'id' in response ? [response] : response
 }

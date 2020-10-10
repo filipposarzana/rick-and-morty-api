@@ -1,7 +1,7 @@
 import { ComponentType, ReactNode } from 'react'
 import { css, StyledComponent } from 'styled-components'
 import { colors, ColorName } from '~/tokens/colors'
-import { disabled } from '~/utils/ui'
+import { disabled } from '~/utils/ui/disabled'
 import { FontStyle, typographyFlavours, TypographyKind } from '~/tokens/typography'
 
 export type TypographyProps = {

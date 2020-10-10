@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 
 type Align = 'center' | 'flex-end' | 'flex-start' | 'baseline' | 'stretch'
 
-type Basis = 'auto' | '33%' | '0' | '4px' | '16px' | '24px' | '36px' | '256px'
+type Basis = 'auto' | '33%' | '50%' | '0' | '4px' | '16px' | '24px' | '36px' | '256px'
 
 type Direction = 'column' | 'row' | 'row-reverse'
 

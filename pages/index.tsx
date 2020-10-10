@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { getCharacters } from '~/api/characters'
+import { CharacterComponent } from '~/components/Character'
 import { Flex } from '~/components/Flex'
 import { Text } from '~/components/Text'
 import { PromiseReturnType } from '~/types'
@@ -31,7 +32,7 @@ const Home = ({ characters: initialCharacters }: Props) => {
 
       setNext(getPageFromCursor(info.next))
     } catch (error) {
-      console.error(error)
+      console.error(error) // eslint-disable-line no-console
     }
   }, [characters, next, setCharacters, setNext])
 
@@ -56,49 +57,12 @@ const Home = ({ characters: initialCharacters }: Props) => {
         <Scroll background="gray050" grow={1} px={16} py={32} shrink={1}>
           <Flex direction="column" role="main">
             <Flex direction="row" wrap="wrap">
-              {characters.map(({ id, image, location, name, origin, species, status }) => (
-                <Flex basis="33%" key={id} justify="center" p={16}>
-                  <Flex background="gray900" borderRadius={10} direction="row" key={id} pr={16}>
-                    <Flex basis="220px" grow={0} shrink={0}>
-                      <img alt={name} height={220} src={image} width={220} />
-                    </Flex>
-                    <Flex direction="column" grow={1} pb={16} pl={16} pt={16} shrink={1}>
-                      <Flex pb={16}>
-                        <Text colorName="white" ellipsis kind="headingS">
-                          {name}
-                        </Text>
-                      </Flex>
-                      <Flex pb={8}>
-                        <Text colorName="gray100" kind="bodyS">
-                          Status
-                        </Text>
-                        <Text colorName="white" kind="bodyM">
-                          {status} - {species}
-                        </Text>
-                      </Flex>
-                      <Flex pb={8}>
-                        <Text colorName="gray100" kind="bodyS">
-                          Location
-                        </Text>
-                        <Text colorName="white" kind="bodyM">
-                          {location.name}
-                        </Text>
-                      </Flex>
-                      <Flex pb={8}>
-                        <Text colorName="gray100" kind="bodyS">
-                          Origin
-                        </Text>
-                        <Text colorName="white" kind="bodyM">
-                          {origin.name}
-                        </Text>
-                      </Flex>
-                    </Flex>
-                  </Flex>
-                </Flex>
+              {characters.map((character) => (
+                <CharacterComponent key={character.id} {...character} />
               ))}
             </Flex>
             <Flex direction="row" justify="center" p={16}>
-              {!!next ? (
+              {next ? (
                 <a onClick={load}>
                   <Flex background="teal900" borderRadius={4} px={32} py={16}>
                     <Text colorName="white" kind="bodyL">

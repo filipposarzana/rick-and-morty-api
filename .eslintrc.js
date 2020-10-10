@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
-    '@typescript-eslint/camelcase': 'off',
+    'camelcase': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -25,7 +25,7 @@ module.exports = {
     'babel/semi': 'off',
     curly: ['error', 'all'],
     'global-require': 'off',
-    'import/extensions': ['error', 'ignorePackages', { ts: 'never', js: 'never' }],
+    'import/extensions': ['error', 'ignorePackages', { ts: 'never', tsx: 'never', js: 'never' }],
     'import/no-extraneous-dependencies': ['error', { peerDependencies: true }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',

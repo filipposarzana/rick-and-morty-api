@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 import { colors, ColorName } from '~/tokens/colors'
-import { transition } from '~/utils/ui'
+import { transition } from '~/utils/ui/transition'
 
 export type Background = {
   backgroundColorName?: ColorName

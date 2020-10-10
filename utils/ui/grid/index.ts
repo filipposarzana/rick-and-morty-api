@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 
 export type Grid = {
   align: 'center' | 'flex-end' | 'flex-start' | 'baseline' | 'stretch'
-  basis: 'auto' | '33%' | '0' | '4px' | '16px' | '24px' | '36px' | '256px'
+  basis: 'auto' | '33%' | '50%' | '0' | '4px' | '16px' | '24px' | '36px' | '256px'
   flexDir: 'column' | 'row' | 'row-reverse'
   flexWrap: 'nowrap' | 'wrap'
   grow: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10

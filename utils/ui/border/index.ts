@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 import { colors, ColorName } from '~/tokens/colors'
 import { SizeInt } from '~/types'
-import { transition } from '~/utils/ui'
+import { transition } from '~/utils/ui/transition'
 
 type BorderRadiusDirection = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 

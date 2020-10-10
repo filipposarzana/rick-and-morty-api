@@ -1,5 +1,4 @@
 /**
- *
  * @param cursor string | null
  * eg: https://rickandmortyapi.com/api/character/?page=1
  *

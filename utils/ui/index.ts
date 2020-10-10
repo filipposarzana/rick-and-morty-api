@@ -1,6 +1,0 @@
-export { background } from './background'
-export { border } from './border'
-export { disabled } from './disabled'
-export { grid } from './grid'
-export { padding } from './padding'
-export { transition } from './transition'

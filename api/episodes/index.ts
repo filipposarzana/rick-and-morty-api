@@ -1,4 +1,4 @@
-import { fetch } from '~/utils/fetch'
+import { call } from '~/utils/fetch'
 
 export type Episode = {
   air_date: string
@@ -10,4 +10,8 @@ export type Episode = {
   url: string
 }
 
-export const getEpisodes = (episodes: string) => fetch<Episode[]>(`episode/${episodes}`)
+export const getEpisodes = async (episodes: number[]) => {
+  const response = await call<Episode | Episode[]>(`episode/${episodes.join(',')}`)
+
+  return 'id' in response ? [response] : response
+}

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { transition } from '~/utils/ui'
+import { transition } from '~/utils/ui/transition'
 import { background, BackgroundProps } from './utils/background'
 import { border, BorderProps } from './utils/border'
 import { flexbox, Flexbox, FlexboxProps } from './utils/flexbox'
